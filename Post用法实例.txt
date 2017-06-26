@@ -1,0 +1,62 @@
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private TextView textView;
+    private Button button;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.test);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.hide();
+        }
+
+        textView = (TextView) findViewById(R.id.test_textView);
+        button = (Button) findViewById(R.id.test_button);
+
+        button.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.test_button) {
+            registerSendInformation();
+            //Toast.makeText(this, "hello", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void registerSendInformation() {
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    OkHttpClient client = new OkHttpClient();
+                    RequestBody requestBody = new FormBody.Builder()
+                            .add("name","½¯°ÛÑÔ")
+                            .add("password","123456")
+                            .build();
+                    Request request = new Request.Builder()
+                            .url("http://bang.cloudshm.com/registerAndLogin/register")
+                            .post(requestBody)
+                            .build();
+                    Response response = client.newCall(request).execute();
+                    String responseData = response.body().string();
+                    showData(responseData);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+
+    private void showData(final String response) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                textView.setText(response);
+            }
+        });
+    }
+
+}
