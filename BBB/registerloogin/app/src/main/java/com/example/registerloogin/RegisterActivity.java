@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -45,16 +46,17 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         switch (v.getId()) {
             case R.id.btn_huoqu:
                 String phone = phoneET.getText().toString();
-                if (phone.isEmpty()) {
-                    Toast.makeText(RegisterActivity.this, "请输入手机号！", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(RegisterActivity.this, "验证码已发送！", Toast.LENGTH_SHORT).show();
+                //if (phone.isEmpty()) {
+                    //Toast.makeText(RegisterActivity.this, "请输入手机号！", Toast.LENGTH_SHORT).show();
+                //} else {
+                    //Toast.makeText(RegisterActivity.this, "验证码已发送！", Toast.LENGTH_SHORT).show();
                     getPassword(phone);
-                }
+                //}
                 break;
             case R.id.btn_register1:
                 String same_phone = phoneET.getText().toString();
                 String code = phoneCodeET.getText().toString();
+                //Toast.makeText(RegisterActivity.this,"hello",Toast.LENGTH_SHORT).show();
                 if (code.isEmpty()) {
                     Toast.makeText(RegisterActivity.this, "请输入验证码！", Toast.LENGTH_SHORT).show();
                 } else {
@@ -67,19 +69,22 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     private void getPassword(final String phone) {
 
+        String baseUrl = "http://Bang.cloudshm.com/registerAndLogin/getCode";
+        final String my_url = baseUrl + "?phone=" + phone;
         new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
                     OkHttpClient client = new OkHttpClient();
                     Request request = new Request.Builder()
-                            .url("http://bang.cloudshm.com/registerAndLogin/register")
+                            .url(my_url)
                             .addHeader("phone", phone)
                             .build();
                     Response response = client.newCall(request).execute();
                     String responseData = response.body().string();
                     Result result = parseJSONWithGSON(responseData);
                     showResultToast(result);
+                    //Log.d("HELLO", responseData);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -91,22 +96,27 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private Result parseJSONWithGSON(String jsonData) {
         Gson gson = new Gson();
         Result result = gson.fromJson(jsonData, Result.class);
+        //Log.d("HELLO", result.getMsg());
+        //Log.d("HELLO", result.getStatus());
         return result;
     }
 
     private void resultToast(Result result) {
-        if (result.getStatus() == "400") {
-            Toast.makeText(RegisterActivity.this, "请输入手机号！", Toast.LENGTH_SHORT).show();
-        } else if (result.getStatus() == "404") {
-            Toast.makeText(RegisterActivity.this, "该手机号已被注册！", Toast.LENGTH_SHORT).show();
-        } else if (result.getStatus() == "200") {
-            Toast.makeText(RegisterActivity.this, "短信发送成功！", Toast.LENGTH_SHORT).show();
-        } else if (result.getStatus() == "402"){
-            if (result.getMsg() == "wrong phone format") {
-                Toast.makeText(RegisterActivity.this, "手机号格式错误！", Toast.LENGTH_SHORT).show();
-            } else if (result.getMsg() == "send sms failed") {
-                Toast.makeText(RegisterActivity.this, "短信发送失败！", Toast.LENGTH_SHORT).show();
-            }
+        switch (result.getStatus()) {
+            case "400":
+                Toast.makeText(RegisterActivity.this, "请输入手机号！", Toast.LENGTH_SHORT).show();
+                break;
+            case "404":
+                Toast.makeText(RegisterActivity.this, "该手机号已被注册！", Toast.LENGTH_SHORT).show();
+                break;
+            case "200":
+                Toast.makeText(RegisterActivity.this, "短信发送成功！", Toast.LENGTH_SHORT).show();
+                break;
+            case "402":
+                Toast.makeText(RegisterActivity.this, "手机格式错误或短信发送失败！", Toast.LENGTH_SHORT).show();
+                break;
+            default:
+                break;
         }
     }
 
@@ -121,13 +131,15 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     private void sendCode(final String phone, final String code) {
 
+        String baseUrl = "http://Bang.cloudshm.com/registerAndLogin/verify";
+        final String my_url = baseUrl + "?phone=" + phone + "&code=" + code;
         new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
                     OkHttpClient client = new OkHttpClient();
                     Request request = new Request.Builder()
-                            .url("http://Bang.cloudshm.com/registerAndLogin/verify")
+                            .url(my_url)
                             .addHeader("phone", phone)
                             .addHeader("code", code)
                             .build();
@@ -135,6 +147,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                     String responseData = response.body().string();
                     Result result = parseJSONWithGSON(responseData);
                     showFinalResult(result);
+                    //Log.d("HELLO", responseData);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -143,15 +156,22 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void resultCodeToast(Result result) {
-        if (result.getStatus() == "200") {
-            Intent intent = new Intent(RegisterActivity.this, setPasswordActivity.class);
-            startActivity(intent);
-        } else if (result.getStatus() == "402") {
-            Toast.makeText(RegisterActivity.this, "验证码已过期，请重新获取！", Toast.LENGTH_SHORT).show();
-        } else if (result.getStatus() == "404") {
-            Toast.makeText(RegisterActivity.this, "验证码错误！", Toast.LENGTH_SHORT).show();
-        } else if (result.getStatus() == "400") {
-            Toast.makeText(RegisterActivity.this, "请将手机号填写完整！", Toast.LENGTH_SHORT).show();
+        switch (result.getStatus()) {
+            case "200":
+                Intent intent = new Intent(RegisterActivity.this, setPasswordActivity.class);
+                startActivity(intent);
+                break;
+            case "402":
+                Toast.makeText(RegisterActivity.this, "验证码已过期，请重新获取！", Toast.LENGTH_SHORT).show();
+                break;
+            case "404":
+                Toast.makeText(RegisterActivity.this, "验证码错误！", Toast.LENGTH_SHORT).show();
+                break;
+            case "400":
+                Toast.makeText(RegisterActivity.this, "请将手机号填写完整！", Toast.LENGTH_SHORT).show();
+                break;
+            default:
+                break;
         }
     }
 
