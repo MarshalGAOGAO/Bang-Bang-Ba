@@ -1,6 +1,7 @@
 package com.example.registerloogin;
 
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,6 +24,10 @@ public class identityActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register3);
         Intent intent = getIntent();
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.hide();
+        }
 
         final String psw=intent.getStringExtra("password");
         final EditText editName =(EditText)findViewById(R.id.set_name1);

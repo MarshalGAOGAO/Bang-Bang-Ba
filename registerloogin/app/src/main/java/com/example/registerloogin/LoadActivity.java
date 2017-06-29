@@ -113,8 +113,8 @@ public class LoadActivity extends AppCompatActivity  {
                     loginSendInformation();
                     break;
                 case R.id.btn_register:
-                    Toast.makeText(LoadActivity.this, "hello", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(LoadActivity.this, registerActivity.class);
+                    //Toast.makeText(LoadActivity.this, "hello", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(LoadActivity.this, RegisterActivity.class);
                     startActivity(intent);
                     break;
             }

@@ -29,7 +29,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".registerActivity" />
+        <activity android:name=".RegisterActivity" />
         <activity android:name=".setPasswordActivity" />
         <activity android:name=".identityActivity" />
     </application>
