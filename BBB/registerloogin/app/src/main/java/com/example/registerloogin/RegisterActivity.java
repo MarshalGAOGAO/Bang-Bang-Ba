@@ -158,7 +158,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private void resultCodeToast(Result result) {
         switch (result.getStatus()) {
             case "200":
+                String phone = phoneET.getText().toString();
                 Intent intent = new Intent(RegisterActivity.this, setPasswordActivity.class);
+                intent.putExtra("extra_phone", phone);
                 startActivity(intent);
                 break;
             case "402":

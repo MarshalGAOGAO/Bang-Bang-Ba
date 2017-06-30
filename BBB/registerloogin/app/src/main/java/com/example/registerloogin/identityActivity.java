@@ -30,6 +30,7 @@ public class identityActivity extends AppCompatActivity {
         }
 
         final String psw=intent.getStringExtra("password");
+        final String phone = intent.getStringExtra("phone");
         final EditText editName =(EditText)findViewById(R.id.set_name1);
         final EditText editIdNum =(EditText)findViewById(R.id.set_idnumber);
 
@@ -43,7 +44,7 @@ public class identityActivity extends AppCompatActivity {
                         try {
                             OkHttpClient client= new OkHttpClient();
                             RequestBody requestBody = new FormBody.Builder()
-                                    .add("phone","18100175452")
+                                    .add("phone",phone)
                                     .add("password",psw)
                                     .add("name",editName.getText().toString())
                                     .add("id_number",editIdNum.getText().toString())

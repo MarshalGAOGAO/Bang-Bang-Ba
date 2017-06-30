@@ -30,6 +30,8 @@ public class setPasswordActivity extends AppCompatActivity {
         final EditText editText2 =(EditText)findViewById(R.id.set_password2);
 
         Button identityActivity = (Button) findViewById(R.id.btn_next2);
+        Intent intent = getIntent();
+        final String phone = intent.getStringExtra("extra_phone");
         identityActivity.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -38,6 +40,7 @@ public class setPasswordActivity extends AppCompatActivity {
                     String psw = editText2.getText().toString();
                     Intent intent= new Intent(setPasswordActivity.this, identityActivity.class);
                     intent.putExtra("password",psw);
+                    intent.putExtra("phone", phone);
                     startActivity(intent);
                 } else if (editText1.getText().toString().length()==0&&
                         editText2.getText().toString().length()==0)
