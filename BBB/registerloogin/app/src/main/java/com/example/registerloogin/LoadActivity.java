@@ -33,6 +33,7 @@ public class LoadActivity extends AppCompatActivity  {
     private EditText editPassword;
     private String status;
     private String msg;
+    private String token;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +84,10 @@ public class LoadActivity extends AppCompatActivity  {
             JSONObject jsonObject = new JSONObject(jsonData);
             status = jsonObject.getString("status");
             msg = jsonObject.getString("msg");
+            if(status=="200"){
+                JSONObject data = jsonObject.getJSONObject("data");
+                token = data.getString("token");
+            }
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
