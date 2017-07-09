@@ -66,7 +66,7 @@ public class orderDetail1 extends AppCompatActivity {
             public void run() {
 
                 Intent intent = getIntent();
-                //int id=intent.getIntExtra("extra_id");
+                int id = intent.getIntExtra("extra_id");
 
                 OkHttpClient client = new OkHttpClient();
                 Request request = new Request.Builder()
@@ -106,7 +106,7 @@ public class orderDetail1 extends AppCompatActivity {
                                 RequestBody requestBody= new FormBody.Builder()
                                         .add("phone","18645234817")
                                         //.add("token","$2y$10$v5TNNyHCkC1IhG1XFdIdbO4MGhYUDoZA3fZ2z5SFEjdr3r")
-                                        .add("id","1")
+                                        .add("id",id)
                                         .build();
                                 Request request = new Request.Builder()
                                         .addHeader("Content-Type","application/json")

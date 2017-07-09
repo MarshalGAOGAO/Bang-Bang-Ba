@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="F:\bangbangbaapp\registerloogin\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="cb454b52545859ed2f24a6c01366805b0fa04b22">
+        <dex dex="F:\bangbangbaapp\registerloogin\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.2.0_089a968661442b30005a342f632119cd346b20ce\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\lenovo\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.8.1\4d060ca3190df0eda4dc13415532a12e15ca5f11\okhttp-3.8.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4d060ca3190df0eda4dc13415532a12e15ca5f11">
+        <dex dex="F:\bangbangbaapp\registerloogin\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-3.8.1_b4e517e4360316611095111c8d8864a5f4b5f87f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\lenovo\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.13.0\a9283170b7305c8d92d25aff02a6ab7e45d06cbe\okio-1.13.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
+        <dex dex="F:\bangbangbaapp\registerloogin\app\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.13.0_0807f0b9ba3d56746be48b58bd0fa403e8cddd8a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\bangbangbaapp\registerloogin\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="F:\bangbangbaapp\registerloogin\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.2.0_47a9279b1e14d8dfcc5f1b492ab14aa5cba9b201\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\bangbangbaapp\registerloogin\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="67eb33110dbacb46a48175b08ae0c96761d2c17d">
+        <dex dex="F:\bangbangbaapp\registerloogin\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.2.0_f8aede0e6b76efc469c1d8a7052fc551e82f3838\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\bangbangbaapp\registerloogin\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="702d339bc0a81d21354cd7e2cf2b67225fa4a16c">
+        <dex dex="F:\bangbangbaapp\registerloogin\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.2.0_a13312ea97e1dceb3defddaaa0193c29e532fbd8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\bangbangbaapp\registerloogin\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ebb9972f84aa64d785ae7898861457810fe0088e">
+        <dex dex="F:\bangbangbaapp\registerloogin\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_e5b250705fd2f55f1b191846f338185990a9c2f8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\bangbangbaapp\registerloogin\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8fe8a8f77d651982ce5e18f6187dc4daf914ac57">
+        <dex dex="F:\bangbangbaapp\registerloogin\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.2.0_a5783c50c97e1c7b670d88f6447a58b2fd0d0866\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\bangbangbaapp\registerloogin\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e820b7be8c035dd522da4bc822e8a76c8e27921a">
+        <dex dex="F:\bangbangbaapp\registerloogin\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.2.0_055b0b2b31333d415703701b5b485b1b92200022\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\bangbangbaapp\registerloogin\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="810f41e5b7fd99f196ebeabe865ba2c54e7e76dc">
+        <dex dex="F:\bangbangbaapp\registerloogin\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.2.0_039aaaadf5bf13b5b40a7bbe898683e9207065f6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\lenovo\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.2.0\support-annotations-25.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4a5a82a027706397fff621b22fd6fa796e91d7c5">
+        <dex dex="F:\bangbangbaapp\registerloogin\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.2.0_706cdf2d34d12519c77a185b9abf7a71728840a1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\bangbangbaapp\registerloogin\app\build\intermediates\exploded-aar\com.android.support.constraint\constraint-layout\1.0.2\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="F:\bangbangbaapp\registerloogin\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support.constraint-constraint-layout-1.0.2_367231a2f12b3e65d77cbf4fa26fc1035fb46796\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\bangbangbaapp\registerloogin\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="fa0446a14ed5dd3725047d6399ffea771a564b30">
+        <dex dex="F:\bangbangbaapp\registerloogin\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.2.0_98909607debef56a46ce9e72819a57ef5b130763\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\lenovo\AppData\Local\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="F:\bangbangbaapp\registerloogin\app\build\intermediates\transforms\dex\debug\folders\1000\10\constraint-layout-solver-1.0.2_1e55431a6aec09ea9231570cbc71d3ca88bbe03e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\bangbangbaapp\registerloogin\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ee394a892dd21c03a528139c1e8d4e0e1264ac84">
+        <dex dex="F:\bangbangbaapp\registerloogin\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.2.0_ab8178903b751fa922c1571103d634e29876d3e9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\bangbangbaapp\registerloogin\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9509341cec03b10ba83f7df5f06cd380b8a9eb1f">
+        <dex dex="F:\bangbangbaapp\registerloogin\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_b1508236c790e73e5c51a527859f37f9c1efb48e\classes.dex" />
+    </item>
+
+</items>

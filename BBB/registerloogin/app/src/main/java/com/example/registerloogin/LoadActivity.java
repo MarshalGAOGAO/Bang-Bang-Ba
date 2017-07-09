@@ -33,6 +33,8 @@ public class LoadActivity extends AppCompatActivity  {
     private EditText editPassword;
     private String status;
     private String msg;
+    //private String data;
+    //private String token;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,13 +61,13 @@ public class LoadActivity extends AppCompatActivity  {
             @Override
             public void run() {
                 try {
-                    String userNmae = editUsername.getText().toString();
+                    String userName = editUsername.getText().toString();
                     String password = editPassword.getText().toString();
 
                     OkHttpClient client = new OkHttpClient();
                     Request request = new Request.Builder()
                             .url("http://Bang.cloudshm.com/registerAndLogin/login")
-                            .addHeader("phone",userNmae)
+                            .addHeader("phone",userName)
                             .addHeader("password",password)
                             .build();
                     Response response = client.newCall(request).execute();
@@ -83,6 +85,9 @@ public class LoadActivity extends AppCompatActivity  {
             JSONObject jsonObject = new JSONObject(jsonData);
             status = jsonObject.getString("status");
             msg = jsonObject.getString("msg");
+            /**
+             * token解析
+             */
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
@@ -94,7 +99,12 @@ public class LoadActivity extends AppCompatActivity  {
                             Toast.makeText(LoadActivity.this, "密码错误！", Toast.LENGTH_SHORT).show();
                             break;
                         case "200":
-                            Toast.makeText(LoadActivity.this, "登录成功！", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(LoadActivity.this, "登录成功！", Toast.LENGTH_SHORT).show();
+                            String phone = editUsername.getText().toString();
+                            Intent intent = new Intent(LoadActivity.this, OrderPageActivity.class);
+                            intent.putExtra("extra_phone", phone);
+                            //intent.putExtra("extra_token", token);
+                            startActivity(intent);
                             break;
                     }
                 }
@@ -113,7 +123,7 @@ public class LoadActivity extends AppCompatActivity  {
                     loginSendInformation();
                     break;
                 case R.id.btn_register:
-                    //Toast.makeText(LoadActivity.this, "hello", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(LoadActivity.this, "mhello", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(LoadActivity.this, RegisterActivity.class);
                     startActivity(intent);
                     break;

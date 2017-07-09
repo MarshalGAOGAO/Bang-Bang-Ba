@@ -1,0 +1,7 @@
+#Thu Jun 29 01:37:57 CST 2017
+base.0=F\:\\bangbangbaapp\\registerloogin\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_e5b250705fd2f55f1b191846f338185990a9c2f8
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=F\:\\bangbangbaapp\\registerloogin\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_b1508236c790e73e5c51a527859f37f9c1efb48e\\classes.dex
+base.1=F\:\\bangbangbaapp\\registerloogin\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_b1508236c790e73e5c51a527859f37f9c1efb48e
+file.0=F\:\\bangbangbaapp\\registerloogin\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_e5b250705fd2f55f1b191846f338185990a9c2f8\\classes.dex

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="x86"
+    api-level="24"
+    density="420dpi"
+    format="8"
+    plugin-version="2.2.2"
+    timestamp="14467275943213"
+    token="8769849945968752127"
+    verifier="CLASS_ADDED" >
+
+    <task
+        name="javac"
+        duration="164" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="58" />
+    <task
+        name="verifier"
+        duration="3" />
+
+    <artifact
+        location="F:\bangbangbaapp\registerloogin\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_4\classes.dex"
+        type="DEX" />
+
+    <build
+        timestamp="13685744768321"
+        verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="F:\bangbangbaapp\registerloogin\app\build\outputs\apk\app-debug.apk"
+            type="MAIN" />
+    </build>
+    <build
+        timestamp="14467275943213"
+        verifier="CLASS_ADDED" >
+        <artifact
+            location="F:\bangbangbaapp\registerloogin\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_4\classes.dex"
+            type="DEX" />
+    </build>
+
+</instant-run>

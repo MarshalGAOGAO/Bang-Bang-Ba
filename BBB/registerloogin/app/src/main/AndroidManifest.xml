@@ -11,17 +11,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <style
-            name="AppTheme"
-            parent="AppBaseTheme">
-            <item name="android:windowFullscreen">
-                true
-            </item>
-            <item name="android:windowNoTitle">
-                true
-            </item>
-        </style>
-
         <activity android:name=".LoadActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,7 +21,12 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".setPasswordActivity" />
         <activity android:name=".identityActivity" />
+<<<<<<< HEAD
         <activity android:name=".orderDetail1"></activity>
+=======
+        <activity android:name=".OrderPageActivity"
+            android:label="" />
+>>>>>>> 0e8ca1076b3b98c85353cff7e3754d4b2d14e446
     </application>
 
 </manifest>

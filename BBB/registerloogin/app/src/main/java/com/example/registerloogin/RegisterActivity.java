@@ -57,7 +57,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             case R.id.btn_register1:
                 String same_phone = phoneET.getText().toString();
                 String code = phoneCodeET.getText().toString();
-                //Toast.makeText(RegisterActivity.this,"hello",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(RegisterActivity.this,"mhello",Toast.LENGTH_SHORT).show();
                 if (code.isEmpty()) {
                     Toast.makeText(RegisterActivity.this, "请输入验证码！", Toast.LENGTH_SHORT).show();
                 } else {

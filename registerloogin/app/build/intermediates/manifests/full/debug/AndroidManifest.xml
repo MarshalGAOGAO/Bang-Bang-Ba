@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.registerloogin"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="25" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="帮帮吧"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+
+        <style
+            name="AppTheme"
+            parent="AppBaseTheme" >
+            <item name="android:windowFullscreen">
+                true
+            </item>
+            <item name="android:windowNoTitle">
+                true
+            </item>
+        </style>
+
+        <activity android:name="com.example.registerloogin.LoadActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.registerloogin.registerActivity" />
+        <activity android:name="com.example.registerloogin.setPasswordActivity" />
+        <activity android:name="com.example.registerloogin.identityActivity" />
+    </application>
+
+</manifest>
