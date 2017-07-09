@@ -11,17 +11,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <style
-            name="AppTheme"
-            parent="AppBaseTheme">
-            <item name="android:windowFullscreen">
-                true
-            </item>
-            <item name="android:windowNoTitle">
-                true
-            </item>
-        </style>
-
         <activity android:name=".LoadActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,6 +21,8 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".setPasswordActivity" />
         <activity android:name=".identityActivity" />
+        <activity android:name=".OrderPageActivity"
+            android:label="" />
     </application>
 
 </manifest>
