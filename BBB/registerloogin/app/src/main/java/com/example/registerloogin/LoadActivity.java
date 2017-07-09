@@ -85,14 +85,9 @@ public class LoadActivity extends AppCompatActivity  {
             JSONObject jsonObject = new JSONObject(jsonData);
             status = jsonObject.getString("status");
             msg = jsonObject.getString("msg");
-            //data = jsonObject.getString("data");
-            //Log.d("MARSHAL", status);
-            //if(status == "200"){
-                //JSONObject data = jsonObject.getJSONObject("data");
-                //JSONObject new_data = jsonObject.getJSONObject(data);
-                //token = new_data.getString("token");
-                //Log.d("MARSHAL", "1214315325");
-            //}
+            /**
+             * token解析
+             */
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
