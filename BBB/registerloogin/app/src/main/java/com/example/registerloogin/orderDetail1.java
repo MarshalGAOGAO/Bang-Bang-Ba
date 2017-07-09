@@ -72,7 +72,7 @@ public class orderDetail1 extends AppCompatActivity {
                 Request request = new Request.Builder()
                         //.addHeader("token","$2y$10$v5TNNyHCkC1IhG1XFdIdbO4MGhYUDoZA3fZ2z5SFEjdr3rUL")
                         .addHeader("phone","18645234817")
-                        .addHeader("id","6")
+                        .addHeader("id",id)
                         .url("http://Bang.cloudshm.com/order/showDetail")
                         .build();
                 try {
