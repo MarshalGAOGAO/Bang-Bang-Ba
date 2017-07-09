@@ -1,4 +1,4 @@
-﻿package com.example.registerloogin;
+package com.example.registerloogin;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -85,10 +85,14 @@ public class LoadActivity extends AppCompatActivity  {
             JSONObject jsonObject = new JSONObject(jsonData);
             status = jsonObject.getString("status");
             msg = jsonObject.getString("msg");
-            if(status=="200"){
-                JSONObject data = jsonObject.getJSONObject("data");
-                token = data.getString("token");
-            }
+            //data = jsonObject.getString("data");
+            //Log.d("MARSHAL", status);
+            //if(status == "200"){
+                //JSONObject data = jsonObject.getJSONObject("data");
+                //JSONObject new_data = jsonObject.getJSONObject(data);
+                //token = new_data.getString("token");
+                //Log.d("MARSHAL", "1214315325");
+            //}
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
