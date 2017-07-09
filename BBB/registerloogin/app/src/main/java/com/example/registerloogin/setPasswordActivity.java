@@ -45,7 +45,7 @@ public class setPasswordActivity extends AppCompatActivity {
                 } else if (editText1.getText().toString().length()==0&&
                         editText2.getText().toString().length()==0)
                         Toast.makeText(setPasswordActivity.this, "密码不能为空", Toast.LENGTH_SHORT).show();
-                        else Toast.makeText(setPasswordActivity.this, "密码不能为空", Toast.LENGTH_SHORT).show();
+                        else Toast.makeText(setPasswordActivity.this, "密码不一致", Toast.LENGTH_SHORT).show();
             }
         });
 
