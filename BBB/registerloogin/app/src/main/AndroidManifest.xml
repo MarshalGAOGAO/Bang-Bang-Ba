@@ -20,10 +20,14 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".setPasswordActivity" />
         <activity android:name=".identityActivity" />
-        <activity
-            android:name=".OrderPageActivity"
-            android:label="" />
+
+        <activity android:name=".EvaluateActivity" />
+
         <activity android:name=".orderDetail1"/>
+
+        <activity android:name=".OrderPageActivity"
+            android:label="" />
+
     </application>
 
 </manifest>

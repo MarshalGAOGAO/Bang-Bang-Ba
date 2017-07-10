@@ -33,7 +33,7 @@ public class orderDetail1 extends AppCompatActivity {
     private String deadline;
     private String applicantPhone;
     private String servantPhone;
-    private String id;
+    private int id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +44,9 @@ public class orderDetail1 extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.hide();
         }
+
+        Intent intent = getIntent();
+        id = intent.getIntExtra("extra_id",0);
 
         Button backButton =(Button)findViewById(R.id.back);
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -61,14 +64,13 @@ public class orderDetail1 extends AppCompatActivity {
             @Override
             public void run() {
 
-               // Intent intent = getIntent();
-               // id = intent.getStringExtra("extra_id");
+
 
                 OkHttpClient client = new OkHttpClient();
                 Request request = new Request.Builder()
                         //.addHeader("token","$2y$10$v5TNNyHCkC1IhG1XFdIdbO4MGhYUDoZA3fZ2z5SFEjdr3rUL")
                         .addHeader("phone","18645234817")
-                        .addHeader("id", "6"/*id*/)
+                        .addHeader("id", String.valueOf(id))
                         .url("http://Bang.cloudshm.com/order/showDetail")
                         .build();
                 try {
@@ -102,7 +104,7 @@ public class orderDetail1 extends AppCompatActivity {
                                 RequestBody requestBody= new FormBody.Builder()
                                         .add("phone","18645234817")
                                         //.add("token","$2y$10$v5TNNyHCkC1IhG1XFdIdbO4MGhYUDoZA3fZ2z5SFEjdr3r")
-                                        .add("id", "6"/*id*/)
+                                        .add("id", String.valueOf(id))
                                         .build();
                                 Request request = new Request.Builder()
                                         .addHeader("Content-Type","application/json")
