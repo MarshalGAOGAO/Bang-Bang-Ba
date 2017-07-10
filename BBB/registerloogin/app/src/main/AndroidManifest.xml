@@ -21,6 +21,7 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".setPasswordActivity" />
         <activity android:name=".identityActivity" />
+        <activity android:name=".EvaluateActivity" />
 <<<<<<< HEAD
         <activity android:name=".orderDetail1"></activity>
 =======

@@ -84,23 +84,20 @@ public class InformationAdapter extends ArrayAdapter<OrderInformation> {
                     finishService(phone /**, context.token**/, InformationAdapter.this.getItem(need).getId());
                     if (m_status == 200) {
                         orderCheck.setText("评价");
-                        /**思程把活动填在这里
-                         * int id = InformationAdapter.this.getItem(need).getId();
-                         * Intent m_intent = new Intent(getContext(), ??????);
-                         * m_intent.m_intent.putExtra("extra_id", id);
-                         * getContext().startActivity(m_intent);
-                         */
+                        int id = InformationAdapter.this.getItem(need).getId();
+                        Intent m_intent = new Intent(getContext(), EvaluateActivity.class);
+                        m_intent.putExtra("extra_id", id);
+                        getContext().startActivity(m_intent);
+
                     } else {
                         Toast.makeText(getContext(), "确认订单失败，请重试！", Toast.LENGTH_SHORT).show();
                     }
                 } else if (orderCheck.getText().toString() == "评价") {
-                    /**思程把活动填在这里
-                     * int need = (int)InformationAdapter.this.getItemId(position);
-                     *int id = InformationAdapter.this.getItem(need).getId();
-                     *Intent m_intent = new Intent(getContext(), ??????);
-                     *m_intent.putExtra("extra_id", id);
-                     *getContext().startActivity(m_intent);
-                     */
+                     int need = (int)InformationAdapter.this.getItemId(position);
+                     int id = InformationAdapter.this.getItem(need).getId();
+                     Intent m_intent = new Intent(getContext(),EvaluateActivity.class);
+                     m_intent.putExtra("extra_id", id);
+                     getContext().startActivity(m_intent);
 
                 } else if (orderCheck.getText().toString() == "取消订单"){
                     Toast.makeText(getContext(), "HAPPY", Toast.LENGTH_SHORT).show();
