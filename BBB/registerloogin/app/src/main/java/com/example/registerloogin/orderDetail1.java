@@ -10,11 +10,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
-import org.json.JSONArray;
 import org.json.JSONObject;
 import java.io.IOException;
-
 import circleimageview.CircleImageView;
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
@@ -22,8 +19,9 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-public class orderDetail1 extends AppCompatActivity {
 
+
+public class orderDetail1 extends AppCompatActivity {
     private String status;
     private String  msg;
     private String title;
@@ -35,19 +33,17 @@ public class orderDetail1 extends AppCompatActivity {
     private String deadline;
     private String applicantPhone;
     private String servantPhone;
-
-    private int id;
-
+    private String id;
 
     @Override
-    protected void onCreate(final Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.order_detail);
+
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.hide();
         }
-
 
         Button backButton =(Button)findViewById(R.id.back);
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -65,14 +61,14 @@ public class orderDetail1 extends AppCompatActivity {
             @Override
             public void run() {
 
-                Intent intent = getIntent();
-                int id = intent.getIntExtra("extra_id");
+               // Intent intent = getIntent();
+               // id = intent.getStringExtra("extra_id");
 
                 OkHttpClient client = new OkHttpClient();
                 Request request = new Request.Builder()
                         //.addHeader("token","$2y$10$v5TNNyHCkC1IhG1XFdIdbO4MGhYUDoZA3fZ2z5SFEjdr3rUL")
                         .addHeader("phone","18645234817")
-                        .addHeader("id",id)
+                        .addHeader("id", "6"/*id*/)
                         .url("http://Bang.cloudshm.com/order/showDetail")
                         .build();
                 try {
@@ -106,7 +102,7 @@ public class orderDetail1 extends AppCompatActivity {
                                 RequestBody requestBody= new FormBody.Builder()
                                         .add("phone","18645234817")
                                         //.add("token","$2y$10$v5TNNyHCkC1IhG1XFdIdbO4MGhYUDoZA3fZ2z5SFEjdr3r")
-                                        .add("id",id)
+                                        .add("id", "6"/*id*/)
                                         .build();
                                 Request request = new Request.Builder()
                                         .addHeader("Content-Type","application/json")
@@ -130,7 +126,6 @@ public class orderDetail1 extends AppCompatActivity {
         });
 
     }
-
 
 
     private  void parseJSONWithJSONObject1(String jsonData){
@@ -197,7 +192,6 @@ public class orderDetail1 extends AppCompatActivity {
     }
 
 
-
     private void parseJSONWithJSONObject2(String jsonData) {
 
         try{
@@ -215,4 +209,6 @@ public class orderDetail1 extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
+
 }
