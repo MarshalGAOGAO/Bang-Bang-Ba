@@ -34,6 +34,8 @@ public class orderDetail1 extends AppCompatActivity {
     private String applicantPhone;
     private String servantPhone;
     private int id;
+    private String phone;
+    private int state;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,7 @@ public class orderDetail1 extends AppCompatActivity {
 
         Intent intent = getIntent();
         id = intent.getIntExtra("extra_id",0);
+        phone=intent.getStringExtra("phone");
 
         Button backButton =(Button)findViewById(R.id.back);
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -64,83 +67,107 @@ public class orderDetail1 extends AppCompatActivity {
             @Override
             public void run() {
 
-
-
                 OkHttpClient client = new OkHttpClient();
                 Request request = new Request.Builder()
                         //.addHeader("token","$2y$10$v5TNNyHCkC1IhG1XFdIdbO4MGhYUDoZA3fZ2z5SFEjdr3rUL")
-                        .addHeader("phone","18645234817")
+                        .addHeader("phone",phone)
                         .addHeader("id", String.valueOf(id))
                         .url("http://Bang.cloudshm.com/order/showDetail")
                         .build();
                 try {
                     Response response = client.newCall(request).execute();
                     String responseData= response.body().string();
-                    parseJSONWithJSONObject1(responseData);
+                    state = parseJSONWithJSONObject1(responseData);
+
+                    if(state==1){
+                        Button ingButton = (Button) findViewById(R.id.cancel);
+                        ingButton.setText("正在服务");
+                    }else if(state==2){
+                        Button evaluateButton = (Button) findViewById(R.id.cancel);
+                        evaluateButton.setText("立即评价");
+                        evaluateButton.setOnClickListener(new View.OnClickListener(){
+
+                            @Override
+                            public void onClick(View v) {
+                                Intent m_intent = new Intent(orderDetail1.this,EvaluateActivity.class);
+                                m_intent.putExtra("extra_id", id);
+                                orderDetail1.this.startActivity(m_intent);
+                            }
+                        });
+                    }
+                    else{
+                        Button cancelButton = (Button) findViewById(R.id.cancel);
+                        cancelButton.setOnClickListener(new View.OnClickListener(){
+                            @Override
+                            public void onClick(View v) {
+
+                                AlertDialog.Builder builder = new AlertDialog.Builder(orderDetail1.this);
+                                builder .setTitle("确认取消？");
+                                builder.setMessage("取消将扣除您的信用值");
+                                builder .setPositiveButton("取消", null);
+                                builder .setNegativeButton("确认", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+
+                                        new Thread(new Runnable() {
+                                            @Override
+                                            public void run() {
+
+
+                                                OkHttpClient client= new OkHttpClient();
+                                                RequestBody requestBody= new FormBody.Builder()
+                                                        .add("phone",phone)
+                                                        //.add("token","$2y$10$v5TNNyHCkC1IhG1XFdIdbO4MGhYUDoZA3fZ2z5SFEjdr3r")
+                                                        .add("id", String.valueOf(id))
+                                                        .build();
+                                                Request request = new Request.Builder()
+                                                        .addHeader("Content-Type","application/json")
+                                                        .url("http://Bang.cloudshm.com/order/cancelOrder")
+                                                        .delete(requestBody)
+                                                        .build();
+                                                try {
+                                                    Response response = client.newCall(request).execute();
+                                                    String responseData =response.body().string();
+                                                    parseJSONWithJSONObject2(responseData);
+                                                } catch (IOException e) {
+                                                    e.printStackTrace();
+                                                }
+
+                                            }
+                                        }).start();
+
+                                    }
+                                }).show();
+                            }
+                        });
+                    }
+
+
+
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
         }).start();
 
-        Button cancelButton = (Button) findViewById(R.id.cancel);
-        cancelButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(orderDetail1.this);
-                builder .setTitle("确认取消？");
-                builder.setMessage("取消将扣除您的信用值");
-                builder .setPositiveButton("取消", null);
-                builder .setNegativeButton("确认", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                        new Thread(new Runnable() {
-                            @Override
-                            public void run() {
-
-
-                                OkHttpClient client= new OkHttpClient();
-                                RequestBody requestBody= new FormBody.Builder()
-                                        .add("phone","18645234817")
-                                        //.add("token","$2y$10$v5TNNyHCkC1IhG1XFdIdbO4MGhYUDoZA3fZ2z5SFEjdr3r")
-                                        .add("id", String.valueOf(id))
-                                        .build();
-                                Request request = new Request.Builder()
-                                        .addHeader("Content-Type","application/json")
-                                        .url("http://Bang.cloudshm.com/order/cancelOrder")
-                                        .delete(requestBody)
-                                        .build();
-                                try {
-                                    Response response = client.newCall(request).execute();
-                                    String responseData =response.body().string();
-                                    parseJSONWithJSONObject2(responseData);
-                                } catch (IOException e) {
-                                    e.printStackTrace();
-                                }
-
-                            }
-                        }).start();
-
-                    }
-                }).show();
-            }
-        });
-
     }
 
 
-    private  void parseJSONWithJSONObject1(String jsonData){
+    private int parseJSONWithJSONObject1(String jsonData){
         try{
             JSONObject jsonObject = new JSONObject(jsonData);
 
             msg=jsonObject.getString("msg");
             status= jsonObject.getString("status");
 
+
+
             if ( status.equals("200") ){
                 JSONObject newData1= jsonObject.getJSONObject("data1");
                 JSONObject newData2 = jsonObject.getJSONObject("data2");
 
+                state=newData1.getInt("state");
                 title= newData1.getString("title");
                 content= newData1.getString("content");
                 money = newData1.getString("money");
@@ -153,6 +180,8 @@ public class orderDetail1 extends AppCompatActivity {
             }
 
 
+
+
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
@@ -163,6 +192,10 @@ public class orderDetail1 extends AppCompatActivity {
                     TextView Phone = (TextView) findViewById(R.id.phone);
                     TextView Time1 = (TextView) findViewById(R.id.order_time2);
                     TextView Time2 = (TextView) findViewById(R.id.deadline2);
+                    TextView State= (TextView) findViewById(R.id.order_state);
+
+
+
 
                     if (status.equals("404")){
                         Title.setText("no Title");
@@ -172,6 +205,7 @@ public class orderDetail1 extends AppCompatActivity {
                         Phone.setText("null");
                         Time1.setText("null");
                         Time2.setText("null");
+                        State.setText("null");
 
 
                     }else{
@@ -182,6 +216,17 @@ public class orderDetail1 extends AppCompatActivity {
                         Phone.setText("发起人"+":"+applicantPhone+"/"+"接单人"+":"+servantPhone);
                         Time1.setText(time);
                         Time2.setText(deadline);
+                        switch (state){
+                            case 0:
+                                State.setText("等待接单");
+                                break;
+                            case 1:
+                                State.setText("正在服务");
+                                break;
+                            case 2:
+                                State.setText("服务完成");
+                                break;
+                        }
 
                     }
 
@@ -191,6 +236,8 @@ public class orderDetail1 extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        return state;
     }
 
 

@@ -26,11 +26,12 @@ public class EvaluateActivity extends AppCompatActivity {
     private Button buttonStar_5;
     private Button buttonSubmit;
     int star=0;
-    Intent intent = getIntent();
-    int id = intent.getIntExtra("extra_id",0);
+
+
 
     private String status;
     private String msg;
+    private int id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,9 @@ public class EvaluateActivity extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.hide();
         }
+
+        Intent intent = getIntent();
+        id = intent.getIntExtra("extra_id",0);
 
         buttonStar_1 = (Button) findViewById(R.id.star_1);
         buttonStar_2 = (Button) findViewById(R.id.star_2);
@@ -67,8 +71,8 @@ public class EvaluateActivity extends AppCompatActivity {
                     RequestBody requestBody = new FormBody.Builder()
                             .add("phone","18645234817")
                             .add("token","$2y$10$v5TNNyHCkC1IhG1XFdIdbO4MGhYUDoZA3fZ2z5SFEjdr3r")
-                            .add("id","" + id)
-                            .add("star","" + star)
+                            .add("id", String.valueOf(id))
+                            .add("star", String.valueOf(star))
                             .build();
                     Request request = new Request.Builder()
                             .url("http://bang.cloudshm.com/order/comment")
@@ -98,7 +102,7 @@ public class EvaluateActivity extends AppCompatActivity {
                             Toast.makeText(EvaluateActivity.this, "参数缺失！", Toast.LENGTH_SHORT).show();
                             break;
                         case "404":
-                            if(status=="order not exists")
+                            if(msg=="order not exists")
                                 Toast.makeText(EvaluateActivity.this, "订单不存在！", Toast.LENGTH_SHORT).show();
                             else Toast.makeText(EvaluateActivity.this, "⽤户不存在！", Toast.LENGTH_SHORT).show();
                             break;

@@ -113,6 +113,7 @@ public class OrderPageActivity extends AppCompatActivity {
 
                         Intent new_intent = new Intent(OrderPageActivity.this, orderDetail1.class);
                         new_intent.putExtra("extra_id", m_id);
+                        new_intent.putExtra("phone",phone);
                         startActivity(new_intent);
 
                     }

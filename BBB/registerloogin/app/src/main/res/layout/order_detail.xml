@@ -52,11 +52,11 @@
 
 
     <TextView
-        android:id="@+id/order_status"
+        android:id="@+id/order_state"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:layout_marginTop="5dp"
-        android:text="订单待完成"
+        android:text="null"
         android:textAlignment="center"
         android:textColor="#bc5c5f"
         android:textSize="25dp" />
