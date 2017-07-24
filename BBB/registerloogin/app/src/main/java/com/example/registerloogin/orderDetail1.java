@@ -163,6 +163,7 @@ public class orderDetail1 extends AppCompatActivity {
 
 
 
+
             if ( status.equals("200") ){
                 JSONObject newData1= jsonObject.getJSONObject("data1");
                 JSONObject newData2 = jsonObject.getJSONObject("data2");
@@ -182,6 +183,8 @@ public class orderDetail1 extends AppCompatActivity {
 
 
 
+
+
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
@@ -193,6 +196,8 @@ public class orderDetail1 extends AppCompatActivity {
                     TextView Time1 = (TextView) findViewById(R.id.order_time2);
                     TextView Time2 = (TextView) findViewById(R.id.deadline2);
                     TextView State= (TextView) findViewById(R.id.order_state);
+
+
 
 
 
@@ -217,13 +222,13 @@ public class orderDetail1 extends AppCompatActivity {
                         Time1.setText(time);
                         Time2.setText(deadline);
                         switch (state){
-                            case 0:
+                            case 1:
                                 State.setText("等待接单");
                                 break;
-                            case 1:
+                            case 2:
                                 State.setText("正在服务");
                                 break;
-                            case 2:
+                            case 3:
                                 State.setText("服务完成");
                                 break;
                         }
