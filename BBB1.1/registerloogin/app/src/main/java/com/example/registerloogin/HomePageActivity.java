@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -190,7 +191,10 @@ public class HomePageActivity extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         HomeBottom homeBottom = homeBottomList.get(position);
+                        int m_id = homeBottom.getId();
                         Intent intent123 = new Intent(HomePageActivity.this, HelpModule.class);
+                        intent123.putExtra("extra_id", m_id);
+                        Log.d("MARSHAL" , "" + m_id);
                         startActivity(intent123);
                         /**
                          * 启动点击活动代码在这里，把上面的intent更改以启动活动
