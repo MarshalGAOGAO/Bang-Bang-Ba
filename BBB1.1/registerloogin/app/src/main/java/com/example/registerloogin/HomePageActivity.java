@@ -192,7 +192,7 @@ public class HomePageActivity extends AppCompatActivity {
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         HomeBottom homeBottom = homeBottomList.get(position);
                         int m_id = homeBottom.getId();
-                        Intent intent123 = new Intent(HomePageActivity.this, HelpModule.class);
+                        Intent intent123 = new Intent(HomePageActivity.this, showDetail.class);
                         intent123.putExtra("extra_id", m_id);
                         Log.d("MARSHAL" , "" + m_id);
                         startActivity(intent123);

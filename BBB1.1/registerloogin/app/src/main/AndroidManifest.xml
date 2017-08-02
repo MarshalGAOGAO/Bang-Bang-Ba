@@ -25,8 +25,10 @@
             android:label="" />
         <activity android:name=".orderDetail1" />
         <activity android:name=".EvaluateActivity" />
-        <activity android:name=".HomePageActivity"></activity>
+        <activity android:name=".HomePageActivity" />
         <activity android:name=".HelpModule" />
+        <activity android:name=".showDetail"
+            android:label="订单详情"></activity>
     </application>
 
 </manifest>
