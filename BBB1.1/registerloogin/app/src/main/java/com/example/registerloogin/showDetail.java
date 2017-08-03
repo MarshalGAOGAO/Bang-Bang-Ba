@@ -20,8 +20,10 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.security.PrivilegedAction;
 
+import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class showDetail extends AppCompatActivity {
@@ -81,6 +83,21 @@ public class showDetail extends AppCompatActivity {
                         new Thread(new Runnable() {
                             @Override
                             public void run() {
+                                OkHttpClient client= new OkHttpClient();
+                                RequestBody requestBody= new FormBody.Builder()
+                                        .add("id", String.valueOf(id))
+                                        .build();
+                                Request request = new Request.Builder()
+                                        .url("http://Bang.cloudshm.com/helpOthers/receiveOrder")
+                                        .post(requestBody)
+                                        .build();
+                                try {
+                                    Response response = client.newCall(request).execute();
+                                    String responseData =response.body().string();
+                                    showResponse(responseData);
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
 
                             }
                         }).start();
@@ -89,6 +106,45 @@ public class showDetail extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void showResponse(final String response){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                //Log.d("receive",response);
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    int status = jsonObject.getInt("status");
+                    if (status==200){
+
+                        new AlertDialog.Builder(showDetail.this)
+                                .setMessage("接单成功")
+                                .setPositiveButton("确认", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        finish();
+                                    }
+                                })
+                                .show();
+
+                    }else{
+                        new AlertDialog.Builder(showDetail.this)
+                                .setMessage("接单异常")
+                                .setPositiveButton("确认", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        finish();
+                                    }
+                                })
+                                .show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        });
     }
 
     private void parseJSONWithJSONObject(String jsonData){
