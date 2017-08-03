@@ -49,6 +49,14 @@ public class HelpModule extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.findhelp);
 
+        Button backButton = (Button)findViewById(R.id.button);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         list.add("1-跑腿");
         list.add("2-悬赏提问");
         list.add("3-学习辅导");

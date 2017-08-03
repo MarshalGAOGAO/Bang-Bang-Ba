@@ -104,7 +104,7 @@ public class HomePageActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent1 = new Intent(HomePageActivity.this, HelpModule.class);
                 startActivity(intent1);
-                finish();
+
             }
         });
         button3.setOnClickListener(new View.OnClickListener() {
@@ -113,7 +113,6 @@ public class HomePageActivity extends AppCompatActivity {
                 Intent intent2 = new Intent(HomePageActivity.this, OrderPageActivity.class);
                 intent2.putExtra("extra_phone", phone);
                 startActivity(intent2);
-                finish();
             }
         });
     }

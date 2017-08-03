@@ -13,6 +13,171 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize" />
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/headimage"
+            android:src="@drawable/eg_cute"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="15dp"/>
+
+        <TextView
+            android:text="姓名："
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textSize="24sp"
+            />
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textSize="24sp"
+            android:text="null"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginLeft="230dp"
+            android:text="信用值 "/>
+
+        <TextView
+            android:id="@+id/credit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginRight="10dp"
+            android:text="xxxx "/>
+
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:src="@drawable/redstring"
+        android:layout_gravity="center"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="发起时间："
+            android:textSize="15sp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:id="@+id/open_time"
+            android:text="xxxxx"
+            android:textSize="15sp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:text="酬金："
+            android:textSize="15sp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:id="@+id/money"
+            android:text="xxxxx"
+            android:textSize="15sp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+
+
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_margin="30dp"
+        android:textSize="18sp"
+        android:text="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"/>
+
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal">
+
+       <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="vertical">
+
+           <Button
+               android:id="@+id/contact"
+               android:layout_width="80dp"
+               android:layout_height="38dp"
+               android:layout_marginLeft="15dp"
+               android:layout_marginBottom="2dp"
+               android:background="@drawable/buttonstyle3"
+               android:textColor="@color/colorPrimary"
+               android:text="与我联系" />
+
+           <Button
+               android:id="@+id/report"
+               android:layout_width="80dp"
+               android:layout_height="38dp"
+               android:layout_marginLeft="15dp"
+               android:background="@drawable/buttonstyle3"
+               android:textColor="@color/colorPrimary"
+               android:text="举报" />
+       </LinearLayout>
+
+
+           <Button
+               android:id="@+id/require"
+               android:layout_gravity="center"
+               android:text="我要接单"
+               android:textColor="#fff"
+               android:textSize="20sp"
+               android:textAlignment="center"
+               android:layout_width="match_parent"
+               android:layout_height="60dp"
+               android:layout_margin="5dp"
+               android:background="@drawable/buttonstyle4" />
+
+
+   </LinearLayout>
+
 
 
 </LinearLayout>
