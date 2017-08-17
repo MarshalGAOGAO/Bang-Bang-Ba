@@ -128,8 +128,20 @@
                 android:layout_height="40dp"
 
                 android:layout_marginLeft="10dp"
-                android:id="@+id/btn_register" />
+                android:id="@+id/btn_find" />
 
         </LinearLayout>
+        <Button
+            android:text="QQ登录"
+            android:textSize="18sp"
+            android:textColor="#d0ffffff"
+            android:background="@drawable/buttonstyle"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/btn_qqlogin" />
     </LinearLayout>
 </LinearLayout>

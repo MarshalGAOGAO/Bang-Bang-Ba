@@ -20,7 +20,7 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
@@ -31,4 +31,6 @@ dependencies {
     compile 'com.android.support:design:24.2.1'
     compile 'de.hdodenhof:circleimageview:2.1.0'
     compile 'com.android.support:recyclerview-v7:24.2.1'
+    compile files('F:/bangbangbaapp/BBB1.1/registerloogin/libs/mta-sdk-1.6.2.jar')
+    compile files('F:/bangbangbaapp/BBB1.1/registerloogin/libs/open_sdk_r5793.jar')
 }
