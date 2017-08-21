@@ -331,14 +331,13 @@ public class LoadActivity extends AppCompatActivity  {
                                 JSONObject jsonObject = new JSONObject(responseQQData);
                                 status = jsonObject.getString("status");
                                 msg = jsonObject.getString("msg");
-                                phone = jsonObject.getString("phone");
+                                if(msg=="firstQQLogin successfully") phone = jsonObject.getString("phone");
 
 
                                 runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
-                                        Toast.makeText(LoadActivity.this, status, Toast.LENGTH_LONG).show();
-                                        Toast.makeText(LoadActivity.this, msg + nickname, Toast.LENGTH_LONG).show();
+
                                         switch (msg) {
                                             case "firstQQLogin successfully":
                                                 Toast.makeText(LoadActivity.this, "首次登陆！", Toast.LENGTH_SHORT).show();
@@ -385,7 +384,6 @@ public class LoadActivity extends AppCompatActivity  {
         QQToken mQQToken = mTencent.getQQToken();
         UserInfo userInfo = new UserInfo(LoadActivity.this, mQQToken);
         userInfo.getUserInfo(userInfoListener);
-            Toast.makeText(LoadActivity.this, nickname+openid, Toast.LENGTH_LONG).show();
 
         }
 
