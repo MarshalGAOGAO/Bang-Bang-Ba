@@ -28,26 +28,27 @@
         <activity android:name=".EvaluateActivity" />
         <activity android:name=".HomePageActivity" />
         <activity android:name=".HelpModule" />
-        <activity android:name=".showDetail"
-            android:label="订单详情"></activity>
-
+        <activity android:name=".QQRegisterActivity" />
+        <activity
+            android:name=".showDetail"
+            android:label="订单详情" />
         <activity
             android:name="com.tencent.tauth.AuthActivity"
-            android:noHistory="true"
-            android:launchMode="singleTask" >
+            android:launchMode="singleTask"
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
                 <data android:scheme="tencent1106260747" />
             </intent-filter>
         </activity>
-
-        <activity android:name="com.tencent.connect.common.AssistActivity"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            />
-
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
     </application>
 
 </manifest>
