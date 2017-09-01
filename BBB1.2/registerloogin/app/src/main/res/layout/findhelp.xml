@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C72E30"
+    >
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="2dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="求支援"
+            android:layout_marginLeft="120dp"
+            android:textSize="25sp"
+            android:layout_gravity="center_vertical"
+            android:textColor="#e0ffffff" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="540dp"
+        android:background="#ffffff"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/greycircle" />
+
+            <EditText
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:hint="订单标题"
+                android:textColor="#e0ff0000"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/TextView_service"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="服务分类"
+                    android:textSize="15sp" />
+
+                <Spinner
+                    android:id="@+id/category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+                </Spinner>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_weight="0.23"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="手机："
+                android:textColor="#e0ff0000"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/phone"
+                android:layout_width="wrap_content"
+                android:layout_height="57dp"
+                android:layout_weight="0.05"
+                android:text="11111"
+                android:textColor="#e0808A87"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:src="@drawable/redstring"
+            android:layout_marginLeft="20dp"
+            android:layout_width="340dp"
+            android:layout_height="20dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="订单内容："
+            android:textSize="20sp"
+            android:layout_marginLeft="20dp"
+            android:textColor="#e0ff0000"
+            />
+
+        <EditText
+            android:id="@+id/content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#e0808A87"
+            android:hint="具体需求内容（150字以内）"
+
+            />
+
+        <ImageView
+            android:src="@drawable/redstring"
+            android:layout_marginLeft="20dp"
+            android:layout_width="340dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="130dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="截止时间："
+            android:textSize="18dp"
+            android:textColor="#c82e30"/>
+        <EditText
+            android:id="@+id/deadline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="订单完成时限（从接单开始计算）"
+            android:text="2017-07-06 12:00:00"
+            android:textSize="18sp"
+            android:layout_marginLeft="20dp"
+            android:textColor="#e0808A87"
+            />
+
+
+        <ImageView
+            android:src="@drawable/redstring"
+            android:layout_marginLeft="20dp"
+            android:layout_width="340dp"
+            android:layout_height="20dp"
+            />
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="费用："
+                android:textSize="20sp"
+                android:layout_marginLeft="20dp"
+                android:textColor="#e0ff0000"
+                />
+            <EditText
+                android:id="@+id/price"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/commit_order"
+                android:text="发布订单"
+                android:textSize="18sp"
+                android:textColor="#d0ff0000"
+                android:background="@drawable/buttonstyle3"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginLeft="120dp"
+                 />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

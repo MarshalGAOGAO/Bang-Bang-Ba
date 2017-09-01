@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/change_information"
+            android:title="我的好友" />
+        <item
+            android:id="@+id/authentication_interface"
+            android:title="认证接口" />
+        <item
+            android:id="@+id/using_information"
+            android:title="使用向导" />
+        <item
+            android:id="@+id/my_setting"
+            android:title="我的设置" />
+    </group>
+</menu>
