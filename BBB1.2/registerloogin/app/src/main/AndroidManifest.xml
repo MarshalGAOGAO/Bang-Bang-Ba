@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.registerloogin">
+    package="com.example.bangbangba">
 
     <!-- 权限声明 -->
     <!-- 访问网络状态 -->
@@ -34,13 +34,13 @@
     <!-- SDK 权限申明, 第三方 APP 接入时，请将 com.netease.nim.demo 替换为自己的包名 -->
     <!-- 和下面的 uses-permission 一起加入到你的 AndroidManifest 文件中。 -->
     <permission
-        android:name="com.example.registerloogin.permission.RECEIVE_MSG"
+        android:name="com.example.bangbangba.permission.RECEIVE_MSG"
         android:protectionLevel="signature" />
     <!-- 接收 SDK 消息广播权限， 第三方 APP 接入时，请将 com.netease.nim.demo 替换为自己的包名 -->
     <uses-permission android:name="com.example.registerloogin.permission.RECEIVE_MSG" />
 
     <application
-        android:name=".NimApplication"
+        android:name="com.example.bangbangba.NimApplication"
         android:allowBackup="true"
         android:icon="@mipmap/img1"
         android:label="帮帮吧"
@@ -109,25 +109,25 @@
             android:name="com.netease.cosine.target.receiver"
             android:value="com.netease.nimlib.service.NimReceiver" />
 
-        <activity android:name=".LoadActivity">
+        <activity android:name="com.example.bangbangba.LoadActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".setPasswordActivity" />
-        <activity android:name=".identityActivity" />
+        <activity android:name="com.example.bangbangba.RegisterActivity" />
+        <activity android:name="com.example.bangbangba.setPasswordActivity" />
+        <activity android:name="com.example.bangbangba.identityActivity" />
         <activity
-            android:name=".OrderPageActivity"
+            android:name="com.example.bangbangba.OrderPageActivity"
             android:label="" />
-        <activity android:name=".orderDetail1" />
-        <activity android:name=".EvaluateActivity" />
-        <activity android:name=".HomePageActivity" />
-        <activity android:name=".HelpModule" />
+        <activity android:name="com.example.bangbangba.orderDetail1" />
+        <activity android:name="com.example.bangbangba.EvaluateActivity" />
+        <activity android:name="com.example.bangbangba.HomePageActivity" />
+        <activity android:name="com.example.bangbangba.HelpModule" />
         <activity
-            android:name=".showDetail"
+            android:name="com.example.bangbangba.showDetail"
             android:label="订单详情" />
         <activity
             android:name="com.tencent.tauth.AuthActivity"
@@ -146,7 +146,7 @@
             android:name="com.tencent.connect.common.AssistActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <activity android:name=".Message.activity.ChattingActivity" />
+        <activity android:name="com.example.bangbangba.Message.activity.ChattingActivity" />
 
     </application>
 
